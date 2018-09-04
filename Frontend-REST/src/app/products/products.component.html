@@ -1,0 +1,14 @@
+<a class="btn btn-lg btn-primary btn-danger" routerLink="/login" >Logout</a>
+
+<h2>Products</h2>
+<div class="card" *ngFor="let product of products">
+  <div class="card-body">
+    <h3>{{product.id}} - {{product.name}}</h3>
+    <p>{{product.description}}</p>
+    <p>{{product.sku}}</p>
+    <p>{{product.cost}}</p>
+    <hr>
+    <button (click) ="removeProduct(product)"class="btn btn-danger">Delete</button>
+    <button (click)="editProduct(product)" class="btn btn-light">Edit</button>
+  </div>
+</div>  
