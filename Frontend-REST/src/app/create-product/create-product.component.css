@@ -1,0 +1,40 @@
+.inputs { 
+    margin-top: 50px;
+}
+
+.btns button {
+    margin-top: 70px;
+    margin-left: 15px;
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+#mSubmit {
+    margin-left: 15px;
+    float:left;
+}
+
+#mClose {
+    margin-right: 15px;
+    float:right;
+}
+
+.cpyPager {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #afffe6;
+    border-radius: 15px;
+    color: #1b8e6a;
+}
+
+.cpyPager:hover {
+    color:#afffe6;
+    border-color:#1b8e6a;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}

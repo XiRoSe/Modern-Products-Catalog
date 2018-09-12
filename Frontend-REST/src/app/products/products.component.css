@@ -1,14 +1,71 @@
+#logout {
+    color: #a02318;
+    border-color: #ffb1aa;;
+}
+
+#logout:hover {
+    color: #ffb1aa;
+    border-color: #a02318;
+}
+
 .editable {
     border-radius: 5px;
     outline:1px solid Lavender;
 }
 
+@keyframes initList {
+    from {padding: 0;}
+    to {padding: 0 70px;}
+}
+
+.pArrows {
+    margin-left:70px;
+    margin-right:70px;
+}
+
+.intro {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    animation-name: initList;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    left: 47%;
+    transform: translate(-50%, 0%);
+}
+
+
+.afterIntro { 
+    padding: 0 70px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    left: 47%;
+    transform: translate(-50%, 0%);
+}
+
+.createBtn {
+padding:50px;
+}
+
+.logout {
+padding:50px;
+}
+
+.deBtns {
+    margin: 80px 10px;
+    margin-bottom: 5px;
+}
+
+.centerItems {
+    padding: 0 10px;
+}
+
 .centered {
     margin: 0;
     position: absolute;
-    left: 50%;
+    left: 48%;
     transform: translate(-50%, 0%);
 }
+
 
 img { max-width:100%; }
 
@@ -56,18 +113,23 @@ a:hover {
 
 /* Page Header */
 .page-header {
-    background: #f9f9f9;
+background: #f9f9f9;
     margin-left: -15px;
     margin-right: -15px;
-    padding: 20px 10px;
-    border-top: 4px solid #ccc;
+    padding: 40px 10px;
+    margin-top: 0;
     color: #999;
     text-transform: uppercase;
+    margin-bottom: 60px;
+    border-top:1px solid lightgray;
+    border-bottom:1px solid lightgray;
 }
     
 .page-header h3 {
     line-height: 0.88rem;
     color: #000;
+    text-transform: uppercase;
+
 }
 
 ul.thumbnails { 
@@ -105,6 +167,7 @@ ul.thumbnails {
     position: static;
     height: 30px;
     width: 15px;
+    color:black;
 }
 
 

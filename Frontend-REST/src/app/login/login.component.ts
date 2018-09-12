@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Router } from '@angular/router';
 
@@ -8,14 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   redirect = '';
 
   constructor(private productsService: ProductsService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
+  // getting the token from user and trensfer it to service
   getToken(token: string): void {
     if (typeof token && token !== '') {
       this.redirect = '/items';

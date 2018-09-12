@@ -1,0 +1,2 @@
+  <button (click)="onEdit()" class="btn btn-light col-md-3" title="Edit" style="float:left;"><i class="glyphicon glyphicon-pencil"></i></button>
+  <button (click)="updateProduct();finishEdit()" class="btn btn-success col-md-3 centered" *ngIf="editMode()" title="Save"><i class="glyphicon glyphicon-floppy-disk"></i></button>

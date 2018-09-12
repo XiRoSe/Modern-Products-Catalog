@@ -1,0 +1,32 @@
+<div>        
+  <button (click)="ngxSmartModalService.getModal('createModal').open()" class="btn btn-primary cpyPager" title="Create a new Product" style="float:right;">Create a Product</button>
+  <ngx-smart-modal #createModal identifier="createModal" class="createModal">
+    <h1>CREATE A NEW PRODUCT</h1>
+    <form>
+          <div class="form-row">
+            <div class="col-md-6 inputs">
+              <label for="productSKU">Product SKU</label>
+              <input type="text" class="form-control is-valid" #sku id="productSKU" placeholder="enter SKU here" required>
+            </div>
+            <div class="col-md-6 inputs">
+              <label for="productName">Product Name</label>
+              <input type="text" class="form-control is-valid" #mName id="productName" placeholder="enter name here" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 inputs">
+              <label for="productDesc">Product Description</label>
+              <input type="text" class="form-control is-valid" #mDesc id="productDesc" placeholder="enter description here">
+            </div>  
+            <div class="col-md-6 inputs">
+              <label for="productPrice">Product Price</label>
+              <input type="number" class="form-control is-valid" #mPrice id="productPrice" placeholder="enter product price here" required>
+            </div>
+          </div>
+          <div class="btns">
+            <button class="btn btn-primary" id="mSubmit" (click)="createProduct(sku.value,mName.value,mDesc.value,mPrice.value);createModal.close()">Submit</button>
+            <button class="btn btn-danger" id="mClose" (click)="createModal.close()">Close</button>
+          </div>
+    </form>
+  </ngx-smart-modal>
+</div>

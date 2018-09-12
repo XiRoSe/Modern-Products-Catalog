@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/Product';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-products',
@@ -10,23 +9,31 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 
 export class ProductsComponent implements OnInit {
+// products list
   products: Product[];
+// which product is in edit mode
   edit = -1;
+// what products to show description for
   showList = [];
+// carousel animation in intro;
+  intro = true;
 
-  constructor(private productsService: ProductsService, public ngxSmartModalService: NgxSmartModalService) { }
+  constructor(private productsService: ProductsService) { }
 
+// getting product list and adding it to local list
   ngOnInit() {
     this.products = [];
     this.productsService.getProducts().subscribe(products => {
-      products.forEach(prod => {
-        if (prod != null) {
-          this.products.push(prod);
-        }
-      });
-    });
+      if (products.length > 0) {
+        products.forEach(prod => {
+            if (prod != null) {
+              this.products.push(prod);
+            }
+          });
+        }});
   }
 
+// dividing products in view to chunks of four
   fillProducts(index: number) {
     if ((index + 4) <= this.products.length) {
       return this.products.slice(index, index + 4);
@@ -35,31 +42,37 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+// counting how many slides needed in view
   counter() {
     if ((this.products.length % 4) === 0) {
        return new Array(this.products.length / 4);
     } else {
-      return new Array(Math.round(this.products.length / 4) + 1);
+      return new Array(Math.floor(this.products.length / 4) + 1);
     }
   }
 
-  removeProduct(product: Product) {
-    if (confirm('Are you sure?')) {
-      this.productsService.removeProduct(product.id).subscribe(() => {
-        this.products.forEach((cur, index) => {
-          if (product.id === cur.id) {
-            this.products.splice(index, 1);
-          }
-        });
-      });
-    }
+// updating localy the deleted product
+  deleteProductEvent(productId) {
+      this.products.forEach((cur, index) => {
+        if (productId === cur.id) {
+          this.products.splice(index, 1);
+        }
+    });
   }
 
-  updateProduct(product: Product, pName: string, description: string, cost: number) {
-    this.productsService.updateProduct(product, pName, description, cost).subscribe();
+// telling which product user is edining for css
+  editProductEvent(editVal) {
+    this.edit = editVal;
   }
 
-  createProduct() {
-    this.ngxSmartModalService.open('x');
+// pushing new product to local ist
+  createProductEvent(newProduct) {
+    this.products.push(newProduct);
+  }
+
+// changing classes for animation
+  async paging() {
+    this.intro = true;
+    await setTimeout(() => this.intro = false, 1000);
   }
 }
