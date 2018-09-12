@@ -1,27 +1,13 @@
 # FrontendREST
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This is a REST Front-End product list with a login screen using Bearer Token, which integrates with a given webservice.
 
-## Development server
+## Dependencies
+Made with Angular 6 using ngx-smart-modal, bootstrap 3.3 and css 3.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Using the application
 
-## Code scaffolding
+Clone or download this project to your machine, then enter 'npm install' at the project main directory through cli in order to install dependencies, eventually enter 'ng serve -o' in order to see the project - in - action.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Conclusion
+I hope you liked the project, matan.
