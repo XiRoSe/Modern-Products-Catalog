@@ -1,6 +1,6 @@
 # FrontendREST
 
-This is a REST Front-End product list with a login screen using Bearer Token, which integrates with a given webservice.
+This is a Angular 6, REST,Front-End product list with a login screen using Bearer Token, which integrates with a given webservice project.
 
 ## Dependencies
 Made with Angular 6 using ngx-smart-modal, bootstrap 3.3 and css 3.
